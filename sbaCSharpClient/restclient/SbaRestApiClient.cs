@@ -453,6 +453,7 @@ namespace sbaCSharpClient.restclient
                 restClient.Timeout = -1;
                 RestRequest restRequest = new RestRequest(Method.POST);
                 restRequest.AddHeader("Authorization", apiToken);
+                restRequest.AddHeader(VENDOR_KEY, vendorKey);
                 restRequest.AddHeader("Content-Type", "application/json");
                 restRequest.AddParameter("application/json", serialized, ParameterType.RequestBody);
                 IRestResponse response = await restClient.ExecuteAsync(restRequest);

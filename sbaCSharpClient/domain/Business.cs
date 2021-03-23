@@ -26,6 +26,7 @@ namespace sbaCSharpClient.domain
         public string primary_contact_email { get; set; }
         public string naics_code { get; set; }
         public bool is_franchise { get; set; }
+        public bool is_sba_listed_franchise { get; set; }
         public string franchise_code { get; set; }
         public string date_of_establishment { get; set; }
     }
