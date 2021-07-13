@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
@@ -126,36 +126,86 @@ namespace sbaCSharpClient.Tests
         [Test]
         public async Task createForgivenessRequest3508S()
         {
+            #region old request
+            //etran_loan = new EtranLoan()
+            //{
+            //    bank_notional_amount = 20000,
+            //    sba_number = "2504010000",
+            //    loan_number = "123456789",
+            //    entity_name = "Test Entity",
+            //    ein = "260320000",
+            //    funding_date = "2020-05-07",
+            //    forgive_eidl_amount = 100.00,
+            //    forgive_eidl_application_number = 123456789,
+            //    demographics = new List<Demographics>(),
+            //    address1 = "5050 Ritter Road – Suite B",
+            //    address2 = "Mechanicsburg, PA",
+            //    dba_name = "Abc Inc",
+            //    phone_number = "1234567890",
+            //    forgive_fte_at_loan_application = 10,
+            //    forgive_amount = 1666.66,
+            //    forgive_fte_at_forgiveness_application = 10,
+            //    forgive_2_million = false,
+            //    primary_email = "user@example.com",
+            //    primary_name = "Jason",
+            //    ez_form = false,
+            //    forgive_lender_confirmation = true,
+            //    forgive_lender_decision = 1,
+            //    s_form = true,
+            //},
+            #endregion
+
             #region build request
 
             SbaPPPLoanForgiveness pppLoanForgiveness = new SbaPPPLoanForgiveness
             {
                 etran_loan = new EtranLoan()
                 {
-                    bank_notional_amount = 20000,
-                    sba_number = "2504010000",
-                    loan_number = "123456789",
-                    entity_name = "Test Entity",
-                    ein = "260320000",
-                    funding_date = "2020-05-07",
-                    forgive_eidl_amount = 100.00,
-                    forgive_eidl_application_number = 123456789,
-                    demographics = new List<Demographics>(),
+                    bank_notional_amount = 15000,
+                    sba_number = "6210901150",
+                    loan_number = "111111111",
+                    entity_name = "Abc Inc",
+                    ein = "309850102",
+                    funding_date = "2020-08-05",
                     address1 = "5050 Ritter Road – Suite B",
                     address2 = "Mechanicsburg, PA",
                     dba_name = "Abc Inc",
-                    phone_number = "1234567890",
+                    phone_number = "6102342123",
                     forgive_fte_at_loan_application = 10,
+                    naics_code = "541410",
+                    ppp_loan_draw = 1,
+                    demographics = new List<Demographics>()
+                    {
+                        new Demographics()
+                        {
+                            name = "Jason",
+                            position = "self-employed individual",
+                            veteran_status = "1",
+                            gender = "M",
+                            ethnicity = "H",
+                            races = new List<Race>()
+                            {
+                                    new Race()
+                                    {
+                                        race = "1" 
+                                    }
+                            }
+
+                        }
+                    },
+                    forgive_payroll = 1000.00,
+                    forgive_covered_period_from = "2020-08-05",
+                    forgive_covered_period_to = "2020-12-31",
+                    forgive_2_million = false,
                     forgive_amount = 1666.66,
                     forgive_fte_at_forgiveness_application = 10,
-                    forgive_2_million = false,
                     primary_email = "user@example.com",
                     primary_name = "Jason",
                     ez_form = false,
                     forgive_lender_confirmation = true,
                     forgive_lender_decision = 1,
-                    s_form = true,
-                },
+                    s_form = true
+                }
             };
 
             #endregion
