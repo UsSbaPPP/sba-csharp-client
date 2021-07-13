@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace sbaCSharpClient.domain
@@ -135,6 +135,10 @@ namespace sbaCSharpClient.domain
 		public Organization organization { get; set; }
 
 		public bool? s_form { get; set; }
+
+		public string naics_code { get; set; }
+
+		public int ppp_loan_draw { get; set; }
 
 	}
 }
